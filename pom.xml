@@ -41,8 +41,7 @@
             <dependency>
                 <groupId>org.jgroups</groupId>
                 <artifactId>jgroups</artifactId>
-                <scope>provided</scope>
-                <version>3.2.7.Final</version>
+                <version>3.0.6.Final</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

@@ -13,4 +13,10 @@
 
     <name>com.piotrnowicki.jgroups::client</name>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.jgroups</groupId>
+            <artifactId>jgroups</artifactId>
+        </dependency>
+    </dependencies>
 </project>
