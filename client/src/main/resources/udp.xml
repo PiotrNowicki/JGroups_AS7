@@ -1,0 +1,23 @@
+<config xmlns="urn:org:jgroups"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="urn:org:jgroups http://www.jgroups.org/schema/JGroups-3.2.xsd">
+    <UDP mcast_addr="230.0.0.4" mcast_port="45688"/>
+    <PING/>
+    <MERGE2/>
+    <FD_SOCK/>
+    <FD/>
+    <VERIFY_SUSPECT/>
+    <BARRIER/>
+    <pbcast.NAKACK/>
+    <UNICAST2/>
+    <pbcast.STABLE/>
+    <pbcast.GMS/>
+    <UFC/>
+    <MFC/>
+    <FRAG2/>
+
+</config>
+
+
+
+
