@@ -18,11 +18,13 @@ import org.jgroups.Channel;
  */
 public class JGroupsChannelServiceActivator implements ServiceActivator {
 
-    private final String JNDI_NAME = "java:jboss/channel/myChannel";
+    private static final String JNDI_NAME = "java:jboss/channel/myChannel";
 
-    private final String STACK_NAME = "udp";
+    private static final String JGROUPS_CHANNEL_SERVICE_PREFIX = "Example.jgroups";
 
-    private final String CHANNEL_NAME = "myChannel";
+    private static final String STACK_NAME = "udp";
+
+    private static final String CHANNEL_NAME = "myChannel";
 
     private ServiceName channelServiceName;
 
@@ -42,6 +44,14 @@ public class JGroupsChannelServiceActivator implements ServiceActivator {
 
         target.addService(channelServiceName, channelService)
                 .addDependency(serviceName, ChannelFactory.class, channelFactory).install();
+
+        // Our own service that will just connect to already configured channel
+        ServiceName cService = ServiceName.of(JGROUPS_CHANNEL_SERVICE_PREFIX, CHANNEL_NAME);
+
+        InjectedValue<Channel> channel = new InjectedValue<>();
+        target.addService(cService, new JGroupsService(channel, CHANNEL_NAME))
+                .addDependency(ServiceBuilder.DependencyType.REQUIRED, ChannelService.getServiceName(CHANNEL_NAME), Channel.class, channel)
+                .setInitialMode(ServiceController.Mode.ACTIVE).install();
     }
 
     void bindChannelToJNDI(ServiceTarget target) {

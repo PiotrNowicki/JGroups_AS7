@@ -34,7 +34,7 @@
             <artifactId>jboss-javaee-6.0</artifactId>
             <type>pom</type>
             <scope>provided</scope>
-            <version>3.0.1.Final</version>
+            <version>3.0.2.Final</version>
         </dependency>
 
         <!-- JGroups -->
@@ -47,7 +47,7 @@
         <dependency>
             <groupId>org.jboss.as</groupId>
             <artifactId>jboss-as-clustering-jgroups</artifactId>
-            <version>7.1.2.Final</version>
+            <version>7.2.0.Final</version>
             <scope>provided</scope>
         </dependency>
 
@@ -55,14 +55,14 @@
         <dependency>
             <groupId>org.jboss.msc</groupId>
             <artifactId>jboss-msc</artifactId>
-            <version>1.1.0.Beta2</version>
+            <version>1.2.0.Beta1</version>
             <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>org.jboss.as</groupId>
             <artifactId>jboss-as-naming</artifactId>
-            <version>7.1.2.Final</version>
+            <version>7.2.0.Final</version>
             <scope>provided</scope>
         </dependency>
 
